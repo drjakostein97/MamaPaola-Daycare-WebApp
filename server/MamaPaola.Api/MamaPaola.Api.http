@@ -1,0 +1,6 @@
+@MamaPaola.Api_HostAddress = http://localhost:5078
+
+GET {{MamaPaola.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
