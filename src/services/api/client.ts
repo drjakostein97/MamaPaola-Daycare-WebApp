@@ -13,8 +13,11 @@ export async function request<T>(
 
   try {
     const response = await fetch(`${API_BASE_URL}${path}`, {
-      headers: { 'Content-Type': 'application/json' },
       ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        ...options.headers,
+      },
     });
     if (!response.ok) {
       return { success: false, error: `Request failed with status ${response.status}` };
