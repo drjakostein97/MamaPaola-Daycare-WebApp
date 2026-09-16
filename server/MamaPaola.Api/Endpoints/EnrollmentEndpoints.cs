@@ -1,6 +1,7 @@
 using MamaPaola.Api.Data;
 using MamaPaola.Api.Dtos;
 using MamaPaola.Api.Entities;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace MamaPaola.Api.Endpoints;
 
@@ -24,6 +25,7 @@ public static class EnrollmentEndpoints
             db.EnrollmentInquiries.Add(entity);
             await db.SaveChangesAsync();
             return Results.Ok(new { });
-        });
+        })
+        .RequireRateLimiting("FormSubmission");
     }
 }
