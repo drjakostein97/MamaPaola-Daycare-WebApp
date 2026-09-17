@@ -1,0 +1,301 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "gallery": "Gallery",
+    "staff": "Staff",
+    "tuition": "Tuition",
+    "contact": "Contact"
+  },
+  "common": {
+    "enrollNow": "Enroll Now",
+    "openMenu": "Open navigation menu"
+  },
+  "languageToggle": {
+    "toSpanish": "Español",
+    "toEnglish": "English"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "hours": "Hours",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "hero": {
+    "intro": "{{name}} offers loving, play-based care for infants through pre-K, with experienced teachers and a curriculum designed to help every child thrive.",
+    "explorePrograms": "Explore Programs",
+    "photoAlt": "Photo of children playing"
+  },
+  "data": {
+    "siteConfig": {
+      "tagline": "A warm, nurturing place for little ones to grow",
+      "hours": {
+        "weekday": { "days": "Monday – Friday", "time": "6:30 AM – 6:00 PM" },
+        "weekend": { "days": "Saturday – Sunday", "time": "Closed" }
+      }
+    },
+    "programs": {
+      "infant": { "name": "Little Sprouts", "ageRange": "6 weeks – 12 months", "description": "Gentle, responsive care with individualized feeding and nap schedules in a calm, sensory-rich room." },
+      "toddler": { "name": "Busy Bees", "ageRange": "1 – 2 years", "description": "Hands-on exploration, early language building, and lots of movement to support growing independence." },
+      "preschool": { "name": "Curious Minds", "ageRange": "3 – 4 years", "description": "Play-based learning with early literacy, math concepts, art, and social-emotional development." },
+      "prek": { "name": "Rising Stars", "ageRange": "4 – 5 years", "description": "Kindergarten-readiness curriculum focused on confidence, collaboration, and a love of learning." },
+      "curriculumPillars": {
+        "playBased": { "title": "Play-Based Learning", "description": "Structured play that builds real academic and social skills." },
+        "socialEmotional": { "title": "Social-Emotional Growth", "description": "Helping children understand feelings and build friendships." },
+        "literacyMath": { "title": "Early Literacy & Math", "description": "Story time, phonics, and hands-on number sense every day." },
+        "creativeExpression": { "title": "Creative Expression", "description": "Art, music, and imaginative play woven into daily routines." }
+      },
+      "dailySchedule": {
+        "arrival": { "activity": "Arrival & Free Play" },
+        "breakfast": { "activity": "Breakfast" },
+        "morningCircle": { "activity": "Morning Circle & Lessons" },
+        "outdoorPlayAm": { "activity": "Outdoor Play" },
+        "lunch": { "activity": "Lunch" },
+        "nap": { "activity": "Nap / Quiet Time" },
+        "snack": { "activity": "Snack & Centers" },
+        "outdoorPlayPm": { "activity": "Outdoor Play" },
+        "windDown": { "activity": "Wind Down & Pickup" }
+      }
+    },
+    "staff": {
+      "paola": { "title": "Founder & Director", "bio": "Paola founded the center with a mission to give every family a warm, trustworthy second home for their child.", "certifications": ["Early Childhood Education, B.A.", "CPR & First Aid Certified"] },
+      "maria": { "title": "Lead Infant Teacher", "bio": "Maria has spent over a decade specializing in infant care, focused on responsive, individualized attention.", "certifications": ["CDA Credential", "Infant/Toddler Specialist"] },
+      "james": { "title": "Preschool Lead Teacher", "bio": "James brings hands-on science and art projects to life, helping kids build curiosity and confidence.", "certifications": ["B.A. Elementary Education", "CPR & First Aid Certified"] },
+      "aisha": { "title": "Pre-K Lead Teacher", "bio": "Aisha focuses on kindergarten readiness, blending structured lessons with plenty of joyful play.", "certifications": ["M.Ed. Early Childhood", "CDA Credential"] }
+    },
+    "tuition": {
+      "tiers": {
+        "infant": { "program": "Little Sprouts (6 wks – 12 mo)", "fullTime": "$320 / week", "partTime": "$220 / week" },
+        "toddler": { "program": "Busy Bees (1 – 2 yrs)", "fullTime": "$290 / week", "partTime": "$200 / week" },
+        "preschool": { "program": "Curious Minds (3 – 4 yrs)", "fullTime": "$260 / week", "partTime": "$180 / week" },
+        "prek": { "program": "Rising Stars (4 – 5 yrs)", "fullTime": "$250 / week", "partTime": "$170 / week" }
+      },
+      "closures": {
+        "newYears": { "date": "Jan 1", "holiday": "New Year's Day" },
+        "memorialDay": { "date": "May 25", "holiday": "Memorial Day" },
+        "independenceDay": { "date": "Jul 4", "holiday": "Independence Day" },
+        "laborDay": { "date": "Sep 7", "holiday": "Labor Day" },
+        "thanksgiving": { "date": "Nov 26–27", "holiday": "Thanksgiving Break" },
+        "christmas": { "date": "Dec 24–25", "holiday": "Christmas Break" }
+      },
+      "faqs": {
+        "registrationFee": { "question": "Is a registration fee required?", "answer": "Yes, a one-time $75 registration fee is due at enrollment to hold your child's spot." },
+        "siblingDiscount": { "question": "Do you offer sibling discounts?", "answer": "Yes, families enrolling more than one child receive a 10% discount on the second child's tuition." },
+        "latePickup": { "question": "What is your late pickup policy?", "answer": "A grace period of 10 minutes is provided; after that, a small late fee applies per 15-minute increment." }
+      }
+    }
+  },
+  "pages": {
+    "home": {
+      "values": {
+        "nurturingCare": { "title": "Nurturing Care", "description": "Every child is treated with warmth, patience, and respect." },
+        "playBased": { "title": "Play-Based Curriculum", "description": "Learning through hands-on exploration and discovery." },
+        "smallClass": { "title": "Small Class Sizes", "description": "Low teacher-to-child ratios for individualized attention." },
+        "licensed": { "title": "Licensed & Certified", "description": "Fully licensed staff trained in early childhood education." }
+      },
+      "programsTitle": "Our Programs",
+      "programsSubtitle": "Age-appropriate care and curriculum from infancy through pre-K.",
+      "seeAllPrograms": "See All Programs",
+      "testimonialsTitle": "What Families Say",
+      "testimonials": {
+        "jasmineR": { "quote": "Mama Paola feels like a second home for our daughter. The teachers genuinely care.", "author": "Jasmine R., Parent" },
+        "davidT": { "quote": "The curriculum is thoughtful and my son has grown so much since starting here.", "author": "David T., Parent" },
+        "priyaS": { "quote": "Communication with the staff is wonderful — we always know how our child's day went.", "author": "Priya S., Parent" }
+      },
+      "galleryTitle": "A Peek Inside",
+      "galleryLabels": {
+        "classroom": "Classroom",
+        "outdoorPlay": "Outdoor Play",
+        "artTime": "Art Time",
+        "storyCircle": "Story Circle"
+      },
+      "viewFullGallery": "View Full Gallery",
+      "ctaTitle": "Ready to join our family?",
+      "ctaBody": "Schedule a tour or start your enrollment inquiry today — we'd love to meet you.",
+      "startEnrollment": "Start Enrollment"
+    },
+    "about": {
+      "title": "About My Favorite Aunts Daycare",
+      "subtitle": "Loving, licensed care rooted in our community since day one.",
+      "ourStoryTitle": "Our Story",
+      "ourStoryP1": "My Favorite Aunts Daycare was founded with a simple idea: every child deserves a caregiver who treats them like family. What started as a small home-based program has grown into a full early-learning center, but our commitment to warmth and individual attention hasn't changed.",
+      "ourStoryP2": "Today, our team of licensed educators welcomes children from six weeks through pre-K, guiding them through their first, most important years of learning.",
+      "facilityPhotoAlt": "Photo of the daycare facility",
+      "missionTitle": "Our Mission & Values",
+      "values": {
+        "respect": { "title": "Respect", "description": "We honor each child's individuality, pace, and personality." },
+        "safety": { "title": "Safety", "description": "A secure, clean, and carefully supervised environment at all times." },
+        "growth": { "title": "Growth", "description": "Encouraging curiosity and confidence through everyday discovery." },
+        "community": { "title": "Community", "description": "Building genuine partnerships between families, teachers, and children." }
+      },
+      "outdoorPhotoAlt": "Photo of the outdoor play area",
+      "facilityTitle": "Our Facility",
+      "facilityP1": "Our center features bright, age-appropriate classrooms, a secure fenced outdoor play area, a dedicated infant nursery, and a full kitchen preparing fresh daily meals and snacks.",
+      "facilityP2": "Every space is designed and childproofed with safety and sensory-rich learning in mind, and monitored throughout the day by our caring staff."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "We'd love to hear from you — reach out anytime.",
+      "mapPlaceholder": "Map placeholder",
+      "sendMessage": "Send Us a Message"
+    },
+    "programs": {
+      "title": "Our Programs",
+      "subtitle": "Age-appropriate classrooms and curriculum from infancy through pre-K.",
+      "curriculumPillarsTitle": "Curriculum Pillars",
+      "sampleDayTitle": "A Sample Day"
+    },
+    "enrollment": {
+      "title": "Enrollment",
+      "subtitle": "Four simple steps to join the Mama Paola family.",
+      "steps": {
+        "inquire": { "title": "Inquire", "description": "Submit the form below or call us to start the conversation." },
+        "tour": { "title": "Tour", "description": "Visit our center and meet the teachers who will care for your child." },
+        "apply": { "title": "Apply", "description": "Complete enrollment paperwork and pay the registration fee." },
+        "enroll": { "title": "Enroll", "description": "Welcome to the family! We'll schedule your child's first day." }
+      },
+      "inquiryTitle": "Enrollment Inquiry",
+      "callOrEmail": "Prefer to talk it through? Call us at {{phone}} or email {{email}}."
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "A glimpse into everyday life at Mama Paola Daycare.",
+      "categories": {
+        "all": "All",
+        "classrooms": "Classrooms",
+        "outdoorPlay": "Outdoor Play",
+        "events": "Events",
+        "artCrafts": "Art & Crafts"
+      },
+      "images": {
+        "infantNursery": "Infant Nursery",
+        "toddlerClassroom": "Toddler Classroom",
+        "preschoolReading": "Preschool Reading Corner",
+        "playground": "Playground",
+        "gardenExploration": "Garden Exploration",
+        "waterPlay": "Water Play Day",
+        "fallFestival": "Fall Festival",
+        "graduationDay": "Graduation Day",
+        "paintingTime": "Painting Time",
+        "craftTable": "Craft Table"
+      }
+    },
+    "staff": {
+      "title": "Meet Our Staff",
+      "subtitle": "Experienced, caring educators dedicated to your child's growth.",
+      "joinTeamTitle": "Join Our Team",
+      "joinTeamBody": "We're always looking for passionate early childhood educators to join our family.",
+      "getInTouch": "Get in Touch"
+    },
+    "tuition": {
+      "title": "Tuition & Schedule",
+      "subtitle": "Transparent pricing and hours for every family.",
+      "weeklyTuitionTitle": "Weekly Tuition",
+      "weeklyTuitionCaveat": "Placeholder rates — final pricing confirmed at enrollment.",
+      "tableProgram": "Program",
+      "tableFullTime": "Full-Time",
+      "tablePartTime": "Part-Time",
+      "hoursOfOperationTitle": "Hours of Operation",
+      "holidayClosuresTitle": "Holiday Closures",
+      "faqTitle": "Frequently Asked Questions"
+    },
+    "notFound": {
+      "code": "404",
+      "message": "Oops! We couldn't find that page.",
+      "backHome": "Back to Home"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "subtitle": "Effective Date: September 17, 2026",
+      "intro": "My Favorite Aunts (\"we,\" \"us,\" or \"our\") is committed to protecting the privacy of the families we serve. This Privacy Policy explains what personal information we collect through this website, how we use it, and the choices you have. By submitting a form on this site, you agree to the practices described here.",
+      "collect": {
+        "heading": "Information We Collect",
+        "intro": "We collect personal information directly from you when you voluntarily submit a form on this site:",
+        "items": [
+          "Contact form: your name, email address, phone number, and the message you send us.",
+          "Enrollment inquiry form: the parent or guardian's name, email address, and phone number; each child's age; your preferred start date; and any additional notes you choose to share."
+        ],
+        "outro": "We do not collect this information through cookies, tracking pixels, or any automated means, and we do not use third-party analytics or advertising services on this site."
+      },
+      "use": {
+        "heading": "How We Use Your Information",
+        "body": "We use the information you provide solely to respond to your inquiry, process enrollment requests, and communicate with you about our programs. We do not use your information for marketing unrelated to your inquiry, and we do not sell or rent your personal information to anyone."
+      },
+      "cookies": {
+        "heading": "Cookies & Local Storage",
+        "body": "This site does not use tracking cookies. It uses your browser's local storage only to remember your preferred language (English or Spanish) across visits — this preference never leaves your device. If you are a staff member, our admin area also uses local storage to keep you signed in; this is used only by authorized staff, not by visiting families."
+      },
+      "children": {
+        "heading": "Children's Privacy",
+        "body": "We collect only minimal information about children — specifically, age — and only from a parent or guardian who voluntarily submits it through our enrollment inquiry form. We do not knowingly collect information directly from children, and this website is not directed at or intended for use by children."
+      },
+      "sharing": {
+        "heading": "Sharing of Information",
+        "body": "We do not sell, rent, or trade your personal information. We may share information with service providers who help us operate this website (such as our hosting and database providers) solely to the extent necessary to provide our services, and only under obligations to keep it confidential. We may also disclose information if required to do so by law."
+      },
+      "retention": {
+        "heading": "Data Retention",
+        "body": "We retain the information you submit for as long as reasonably necessary to respond to your inquiry, process your enrollment, and maintain our business records, unless you request that we delete it sooner."
+      },
+      "security": {
+        "heading": "Security",
+        "body": "We take reasonable measures to protect your information, including rate-limiting form submissions to prevent abuse and securely hashing staff passwords. However, no method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security."
+      },
+      "rights": {
+        "heading": "Your Rights & Choices",
+        "body": "You may contact us at any time to ask what information we have about you, to request a correction, or to request that we delete it. We will respond to reasonable requests promptly."
+      },
+      "changes": {
+        "heading": "Changes to This Policy",
+        "body": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised effective date."
+      },
+      "contact": {
+        "heading": "Contact Us",
+        "body": "If you have questions about this Privacy Policy or how we handle your information, please contact us:"
+      },
+      "disclaimer": "This Privacy Policy is a template for demonstration purposes and does not constitute legal advice. Please have it reviewed by a qualified attorney before using it for an actual business."
+    }
+  },
+  "forms": {
+    "enrollment": {
+      "parentName": "Parent / Guardian Name",
+      "email": "Email",
+      "phone": "Phone",
+      "childAge": "Child's Age",
+      "preferredStartDate": "Preferred Start Date",
+      "notes": "Additional Notes",
+      "addAnotherChild": "Add another child",
+      "removeChild": "Remove child",
+      "submitInquiry": "Submit Inquiry",
+      "submitting": "Submitting…",
+      "successMessage": "Thank you! Your enrollment inquiry has been received. We'll be in touch soon.",
+      "validation": {
+        "parentNameRequired": "Parent name is required",
+        "invalidEmail": "Enter a valid email address",
+        "invalidPhone": "Enter a valid phone number",
+        "preferredStartDateRequired": "Preferred start date is required",
+        "childAgeRequired": "Child's age is required"
+      }
+    },
+    "contact": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "sendMessage": "Send Message",
+      "sending": "Sending…",
+      "successMessage": "Thanks for reaching out! We'll get back to you soon.",
+      "validation": {
+        "nameRequired": "Name is required",
+        "invalidEmail": "Enter a valid email address",
+        "invalidPhone": "Enter a valid phone number",
+        "messageRequired": "Message is required"
+      }
+    },
+    "shared": {
+      "genericError": "Something went wrong. Please try again."
+    }
+  }
+}

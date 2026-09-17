@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
+import { useTranslation } from 'react-i18next';
 import { useAsyncForm } from '../../hooks/useAsyncForm';
 import { submitContactForm } from '../../services/contactService';
 import { isRequired, isValidEmail, isValidPhone } from '../../utils/validators';
@@ -12,6 +13,7 @@ import type { ContactFormPayload } from '../../services/types';
 const emptyForm: ContactFormPayload = { name: '', email: '', phone: '', message: '' };
 
 export function ContactForm() {
+  const { t } = useTranslation();
   const [form, setForm] = useState<ContactFormPayload>(emptyForm);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormPayload, string>>>({});
   const { status, error, submit, isLoading } = useAsyncForm(submitContactForm);
@@ -22,10 +24,10 @@ export function ContactForm() {
 
   function validate(): boolean {
     const next: Partial<Record<keyof ContactFormPayload, string>> = {};
-    if (!isRequired(form.name)) next.name = 'Name is required';
-    if (!isValidEmail(form.email)) next.email = 'Enter a valid email address';
-    if (!isValidPhone(form.phone)) next.phone = 'Enter a valid phone number';
-    if (!isRequired(form.message)) next.message = 'Message is required';
+    if (!isRequired(form.name)) next.name = t('forms.contact.validation.nameRequired');
+    if (!isValidEmail(form.email)) next.email = t('forms.contact.validation.invalidEmail');
+    if (!isValidPhone(form.phone)) next.phone = t('forms.contact.validation.invalidPhone');
+    if (!isRequired(form.message)) next.message = t('forms.contact.validation.messageRequired');
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -43,12 +45,12 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} noValidate>
       <Stack spacing={2.5}>
         {status === 'success' && (
-          <Alert severity="success">Thanks for reaching out! We'll get back to you soon.</Alert>
+          <Alert severity="success">{t('forms.contact.successMessage')}</Alert>
         )}
         {status === 'error' && <Alert severity="error">{error}</Alert>}
 
         <TextField
-          label="Name"
+          label={t('forms.contact.name')}
           fullWidth
           required
           value={form.name}
@@ -57,7 +59,7 @@ export function ContactForm() {
           helperText={errors.name}
         />
         <TextField
-          label="Email"
+          label={t('forms.contact.email')}
           type="email"
           fullWidth
           required
@@ -67,7 +69,7 @@ export function ContactForm() {
           helperText={errors.email}
         />
         <TextField
-          label="Phone"
+          label={t('forms.contact.phone')}
           fullWidth
           required
           value={form.phone}
@@ -76,7 +78,7 @@ export function ContactForm() {
           helperText={errors.phone}
         />
         <TextField
-          label="Message"
+          label={t('forms.contact.message')}
           fullWidth
           required
           multiline
@@ -87,7 +89,7 @@ export function ContactForm() {
           helperText={errors.message}
         />
         <Button type="submit" variant="contained" color="primary" size="large" disabled={isLoading}>
-          {isLoading ? 'Sending…' : 'Send Message'}
+          {isLoading ? t('forms.contact.sending') : t('forms.contact.sendMessage')}
         </Button>
       </Stack>
     </form>

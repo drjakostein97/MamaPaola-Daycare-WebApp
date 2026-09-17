@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="MamaPaola.Api/MamaPaola.Api.csproj" />
+  <Project Path="MamaPaola.Api.Tests/MamaPaola.Api.Tests.csproj" />
 </Solution>

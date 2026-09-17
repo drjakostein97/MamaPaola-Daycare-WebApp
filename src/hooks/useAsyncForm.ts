@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { ApiResult } from '../services/types';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -6,6 +7,7 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 export function useAsyncForm<TPayload, TData>(
   submitFn: (payload: TPayload) => Promise<ApiResult<TData>>,
 ) {
+  const { t } = useTranslation();
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState<string | null>(null);
 
@@ -18,11 +20,11 @@ export function useAsyncForm<TPayload, TData>(
         setStatus('success');
       } else {
         setStatus('error');
-        setError(result.error ?? 'Something went wrong. Please try again.');
+        setError(result.error ?? t('forms.shared.genericError'));
       }
       return result;
     },
-    [submitFn],
+    [submitFn, t],
   );
 
   const reset = useCallback(() => {

@@ -1,0 +1,301 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "programs": "Programas",
+    "gallery": "Galería",
+    "staff": "Personal",
+    "tuition": "Costos",
+    "contact": "Contacto"
+  },
+  "common": {
+    "enrollNow": "Inscríbase Ahora",
+    "openMenu": "Abrir menú de navegación"
+  },
+  "languageToggle": {
+    "toSpanish": "Español",
+    "toEnglish": "English"
+  },
+  "footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "hours": "Horario",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "privacyPolicy": "Política de Privacidad"
+  },
+  "hero": {
+    "intro": "{{name}} ofrece un cuidado cariñoso y basado en el juego para bebés hasta preescolar, con maestros experimentados y un plan de estudios diseñado para ayudar a cada niño a prosperar.",
+    "explorePrograms": "Explorar Programas",
+    "photoAlt": "Foto de niños jugando"
+  },
+  "data": {
+    "siteConfig": {
+      "tagline": "Un lugar cálido y acogedor para que los más pequeños crezcan",
+      "hours": {
+        "weekday": { "days": "Lunes – Viernes", "time": "6:30 a.m. – 6:00 p.m." },
+        "weekend": { "days": "Sábado – Domingo", "time": "Cerrado" }
+      }
+    },
+    "programs": {
+      "infant": { "name": "Pequeños Brotes", "ageRange": "6 semanas – 12 meses", "description": "Cuidado cariñoso y receptivo con horarios individualizados de alimentación y siesta en un ambiente tranquilo y rico en estímulos sensoriales." },
+      "toddler": { "name": "Abejitas Activas", "ageRange": "1 – 2 años", "description": "Exploración práctica, desarrollo temprano del lenguaje y mucho movimiento para apoyar la independencia en crecimiento." },
+      "preschool": { "name": "Mentes Curiosas", "ageRange": "3 – 4 años", "description": "Aprendizaje basado en el juego con lectoescritura temprana, conceptos matemáticos, arte y desarrollo socioemocional." },
+      "prek": { "name": "Estrellas en Ascenso", "ageRange": "4 – 5 años", "description": "Plan de estudios enfocado en la preparación para el kínder, con énfasis en la confianza, la colaboración y el amor por aprender." },
+      "curriculumPillars": {
+        "playBased": { "title": "Aprendizaje Basado en el Juego", "description": "Juego estructurado que desarrolla habilidades académicas y sociales reales." },
+        "socialEmotional": { "title": "Crecimiento Socioemocional", "description": "Ayudamos a los niños a comprender sus emociones y a construir amistades." },
+        "literacyMath": { "title": "Lectoescritura y Matemáticas Tempranas", "description": "Hora del cuento, fonética y sentido numérico práctico todos los días." },
+        "creativeExpression": { "title": "Expresión Creativa", "description": "Arte, música y juego imaginativo integrados en la rutina diaria." }
+      },
+      "dailySchedule": {
+        "arrival": { "activity": "Llegada y Juego Libre" },
+        "breakfast": { "activity": "Desayuno" },
+        "morningCircle": { "activity": "Círculo Matutino y Lecciones" },
+        "outdoorPlayAm": { "activity": "Juego al Aire Libre" },
+        "lunch": { "activity": "Almuerzo" },
+        "nap": { "activity": "Siesta / Tiempo Tranquilo" },
+        "snack": { "activity": "Merienda y Estaciones de Aprendizaje" },
+        "outdoorPlayPm": { "activity": "Juego al Aire Libre" },
+        "windDown": { "activity": "Relajación y Recogida" }
+      }
+    },
+    "staff": {
+      "paola": { "title": "Fundadora y Directora", "bio": "Paola fundó el centro con la misión de brindarle a cada familia un segundo hogar cálido y confiable para su hijo o hija.", "certifications": ["Licenciatura en Educación Infantil", "Certificación en RCP y Primeros Auxilios"] },
+      "maria": { "title": "Maestra Principal de Bebés", "bio": "María lleva más de una década especializándose en el cuidado de bebés, enfocada en brindar atención receptiva e individualizada.", "certifications": ["Credencial CDA", "Especialista en Bebés y Niños Pequeños"] },
+      "james": { "title": "Maestro Principal de Preescolar", "bio": "James da vida a proyectos prácticos de ciencia y arte, ayudando a los niños a desarrollar curiosidad y confianza.", "certifications": ["Licenciatura en Educación Primaria", "Certificación en RCP y Primeros Auxilios"] },
+      "aisha": { "title": "Maestra Principal de Pre-Kínder", "bio": "Aisha se enfoca en la preparación para el kínder, combinando lecciones estructuradas con mucho juego alegre.", "certifications": ["Maestría en Educación Infantil Temprana", "Credencial CDA"] }
+    },
+    "tuition": {
+      "tiers": {
+        "infant": { "program": "Pequeños Brotes (6 sem. – 12 meses)", "fullTime": "$320 / semana", "partTime": "$220 / semana" },
+        "toddler": { "program": "Abejitas Activas (1 – 2 años)", "fullTime": "$290 / semana", "partTime": "$200 / semana" },
+        "preschool": { "program": "Mentes Curiosas (3 – 4 años)", "fullTime": "$260 / semana", "partTime": "$180 / semana" },
+        "prek": { "program": "Estrellas en Ascenso (4 – 5 años)", "fullTime": "$250 / semana", "partTime": "$170 / semana" }
+      },
+      "closures": {
+        "newYears": { "date": "1 de enero", "holiday": "Año Nuevo" },
+        "memorialDay": { "date": "25 de mayo", "holiday": "Día de los Caídos" },
+        "independenceDay": { "date": "4 de julio", "holiday": "Día de la Independencia" },
+        "laborDay": { "date": "7 de septiembre", "holiday": "Día del Trabajo" },
+        "thanksgiving": { "date": "26–27 de nov.", "holiday": "Receso de Acción de Gracias" },
+        "christmas": { "date": "24–25 de dic.", "holiday": "Receso de Navidad" }
+      },
+      "faqs": {
+        "registrationFee": { "question": "¿Se requiere una cuota de inscripción?", "answer": "Sí, se debe pagar una cuota única de $75 al momento de inscribirse para reservar el lugar de su hijo o hija." },
+        "siblingDiscount": { "question": "¿Ofrecen descuentos para hermanos?", "answer": "Sí, las familias que inscriben a más de un hijo reciben un descuento del 10% en la matrícula del segundo niño." },
+        "latePickup": { "question": "¿Cuál es su política de recogida tardía?", "answer": "Se ofrece un período de gracia de 10 minutos; después de eso, se aplica un pequeño cargo por cada 15 minutos adicionales." }
+      }
+    }
+  },
+  "pages": {
+    "home": {
+      "values": {
+        "nurturingCare": { "title": "Cuidado Cariñoso", "description": "Cada niño es tratado con calidez, paciencia y respeto." },
+        "playBased": { "title": "Plan de Estudios Basado en el Juego", "description": "Aprendizaje a través de la exploración práctica y el descubrimiento." },
+        "smallClass": { "title": "Grupos Reducidos", "description": "Bajas proporciones de maestro por niño para una atención individualizada." },
+        "licensed": { "title": "Con Licencia y Certificación", "description": "Personal totalmente licenciado y capacitado en educación infantil temprana." }
+      },
+      "programsTitle": "Nuestros Programas",
+      "programsSubtitle": "Cuidado y plan de estudios apropiados para cada edad, desde la infancia hasta el pre-kínder.",
+      "seeAllPrograms": "Ver Todos los Programas",
+      "testimonialsTitle": "Lo Que Dicen las Familias",
+      "testimonials": {
+        "jasmineR": { "quote": "Mama Paola se siente como un segundo hogar para nuestra hija. Las maestras realmente se preocupan por los niños.", "author": "Jasmine R., Madre" },
+        "davidT": { "quote": "El plan de estudios es muy bien pensado y mi hijo ha crecido muchísimo desde que empezó aquí.", "author": "David T., Padre" },
+        "priyaS": { "quote": "La comunicación con el personal es maravillosa; siempre sabemos cómo le fue a nuestro hijo en el día.", "author": "Priya S., Madre" }
+      },
+      "galleryTitle": "Un Vistazo por Dentro",
+      "galleryLabels": {
+        "classroom": "Salón de Clases",
+        "outdoorPlay": "Juego al Aire Libre",
+        "artTime": "Hora de Arte",
+        "storyCircle": "Círculo de Cuentos"
+      },
+      "viewFullGallery": "Ver Galería Completa",
+      "ctaTitle": "¿Listos para unirse a nuestra familia?",
+      "ctaBody": "Programe una visita o comience su solicitud de inscripción hoy mismo — nos encantaría conocerlos.",
+      "startEnrollment": "Comenzar Inscripción"
+    },
+    "about": {
+      "title": "Sobre My Favorite Aunts Daycare",
+      "subtitle": "Cuidado cariñoso y con licencia, arraigado en nuestra comunidad desde el primer día.",
+      "ourStoryTitle": "Nuestra Historia",
+      "ourStoryP1": "My Favorite Aunts Daycare se fundó con una idea sencilla: todo niño merece un cuidador que lo trate como familia. Lo que comenzó como un pequeño programa en un hogar ha crecido hasta convertirse en un centro completo de aprendizaje temprano, pero nuestro compromiso con la calidez y la atención individual no ha cambiado.",
+      "ourStoryP2": "Hoy, nuestro equipo de educadoras y educadores con licencia recibe a niños desde las seis semanas hasta el pre-kínder, guiándolos a través de sus primeros y más importantes años de aprendizaje.",
+      "facilityPhotoAlt": "Foto de las instalaciones de la guardería",
+      "missionTitle": "Nuestra Misión y Valores",
+      "values": {
+        "respect": { "title": "Respeto", "description": "Honramos la individualidad, el ritmo y la personalidad de cada niño." },
+        "safety": { "title": "Seguridad", "description": "Un ambiente seguro, limpio y cuidadosamente supervisado en todo momento." },
+        "growth": { "title": "Crecimiento", "description": "Fomentamos la curiosidad y la confianza a través del descubrimiento diario." },
+        "community": { "title": "Comunidad", "description": "Construimos alianzas genuinas entre familias, maestros y niños." }
+      },
+      "outdoorPhotoAlt": "Foto del área de juegos al aire libre",
+      "facilityTitle": "Nuestras Instalaciones",
+      "facilityP1": "Nuestro centro cuenta con salones luminosos y apropiados para cada edad, un área de juegos al aire libre segura y cercada, una guardería dedicada para bebés, y una cocina completa que prepara comidas y meriendas frescas todos los días.",
+      "facilityP2": "Cada espacio está diseñado y protegido pensando en la seguridad y el aprendizaje sensorial, y es supervisado durante todo el día por nuestro personal cariñoso."
+    },
+    "contact": {
+      "title": "Contáctenos",
+      "subtitle": "Nos encantaría saber de usted — comuníquese en cualquier momento.",
+      "mapPlaceholder": "Marcador de mapa",
+      "sendMessage": "Envíenos un Mensaje"
+    },
+    "programs": {
+      "title": "Nuestros Programas",
+      "subtitle": "Salones y plan de estudios apropiados para cada edad, desde la infancia hasta el pre-kínder.",
+      "curriculumPillarsTitle": "Pilares del Plan de Estudios",
+      "sampleDayTitle": "Un Día de Muestra"
+    },
+    "enrollment": {
+      "title": "Inscripción",
+      "subtitle": "Cuatro pasos sencillos para unirte a la familia de Mama Paola.",
+      "steps": {
+        "inquire": { "title": "Consultar", "description": "Envíe el formulario a continuación o llámenos para comenzar la conversación." },
+        "tour": { "title": "Visitar", "description": "Visite nuestro centro y conozca a las maestras que cuidarán a su hijo." },
+        "apply": { "title": "Solicitar", "description": "Complete los documentos de inscripción y pague la cuota de registro." },
+        "enroll": { "title": "Inscribirse", "description": "¡Bienvenidos a la familia! Programaremos el primer día de su hijo." }
+      },
+      "inquiryTitle": "Solicitud de Inscripción",
+      "callOrEmail": "¿Prefiere hablar en persona? Llámenos al {{phone}} o escríbanos a {{email}}."
+    },
+    "gallery": {
+      "title": "Galería",
+      "subtitle": "Un vistazo a la vida diaria en Mama Paola Daycare.",
+      "categories": {
+        "all": "Todo",
+        "classrooms": "Salones",
+        "outdoorPlay": "Juego al Aire Libre",
+        "events": "Eventos",
+        "artCrafts": "Arte y Manualidades"
+      },
+      "images": {
+        "infantNursery": "Sala de Bebés",
+        "toddlerClassroom": "Salón de Niños Pequeños",
+        "preschoolReading": "Rincón de Lectura de Preescolar",
+        "playground": "Área de Juegos",
+        "gardenExploration": "Exploración en el Jardín",
+        "waterPlay": "Día de Juegos con Agua",
+        "fallFestival": "Festival de Otoño",
+        "graduationDay": "Día de Graduación",
+        "paintingTime": "Hora de Pintar",
+        "craftTable": "Mesa de Manualidades"
+      }
+    },
+    "staff": {
+      "title": "Conozca a Nuestro Personal",
+      "subtitle": "Educadores experimentados y cariñosos, dedicados al crecimiento de su hijo.",
+      "joinTeamTitle": "Únase a Nuestro Equipo",
+      "joinTeamBody": "Siempre estamos buscando educadores apasionados por la primera infancia para unirse a nuestra familia.",
+      "getInTouch": "Contáctenos"
+    },
+    "tuition": {
+      "title": "Matrícula y Horario",
+      "subtitle": "Precios transparentes y horarios para cada familia.",
+      "weeklyTuitionTitle": "Matrícula Semanal",
+      "weeklyTuitionCaveat": "Tarifas de referencia — el precio final se confirma al momento de la inscripción.",
+      "tableProgram": "Programa",
+      "tableFullTime": "Tiempo Completo",
+      "tablePartTime": "Medio Tiempo",
+      "hoursOfOperationTitle": "Horario de Atención",
+      "holidayClosuresTitle": "Días Feriados",
+      "faqTitle": "Preguntas Frecuentes"
+    },
+    "notFound": {
+      "code": "404",
+      "message": "¡Ups! No pudimos encontrar esa página.",
+      "backHome": "Volver al Inicio"
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidad",
+      "subtitle": "Fecha de vigencia: 17 de septiembre de 2026",
+      "intro": "My Favorite Aunts (\"nosotros\" o \"nuestro\") se compromete a proteger la privacidad de las familias a las que servimos. Esta Política de Privacidad explica qué información personal recopilamos a través de este sitio web, cómo la utilizamos y las opciones que usted tiene. Al enviar un formulario en este sitio, usted acepta las prácticas descritas aquí.",
+      "collect": {
+        "heading": "Información que Recopilamos",
+        "intro": "Recopilamos información personal directamente de usted cuando envía voluntariamente un formulario en este sitio:",
+        "items": [
+          "Formulario de contacto: su nombre, dirección de correo electrónico, número de teléfono y el mensaje que nos envía.",
+          "Formulario de solicitud de inscripción: el nombre del padre o tutor, correo electrónico y número de teléfono; la edad de cada niño; la fecha de inicio preferida; y cualquier nota adicional que decida compartir."
+        ],
+        "outro": "No recopilamos esta información mediante cookies, píxeles de seguimiento ni ningún medio automatizado, y no utilizamos servicios de análisis ni publicidad de terceros en este sitio."
+      },
+      "use": {
+        "heading": "Cómo Utilizamos su Información",
+        "body": "Utilizamos la información que usted proporciona únicamente para responder a su consulta, procesar solicitudes de inscripción y comunicarnos con usted sobre nuestros programas. No utilizamos su información para fines de mercadeo no relacionados con su consulta, y no vendemos ni alquilamos su información personal a nadie."
+      },
+      "cookies": {
+        "heading": "Cookies y Almacenamiento Local",
+        "body": "Este sitio no utiliza cookies de seguimiento. Utiliza el almacenamiento local de su navegador únicamente para recordar su idioma preferido (inglés o español) entre visitas; esta preferencia nunca sale de su dispositivo. Si usted es miembro del personal, nuestra área administrativa también utiliza el almacenamiento local para mantener su sesión iniciada; esto lo utiliza únicamente el personal autorizado, no las familias visitantes."
+      },
+      "children": {
+        "heading": "Privacidad de los Niños",
+        "body": "Recopilamos solo información mínima sobre los niños, específicamente la edad, y únicamente cuando un padre o tutor la envía voluntariamente a través de nuestro formulario de solicitud de inscripción. No recopilamos información directamente de los niños a sabiendas, y este sitio web no está dirigido ni destinado al uso por parte de niños."
+      },
+      "sharing": {
+        "heading": "Compartir Información",
+        "body": "No vendemos, alquilamos ni intercambiamos su información personal. Podemos compartir información con proveedores de servicios que nos ayudan a operar este sitio web (como nuestros proveedores de alojamiento y base de datos) únicamente en la medida necesaria para brindar nuestros servicios, y siempre bajo obligaciones de confidencialidad. También podemos divulgar información si así lo exige la ley."
+      },
+      "retention": {
+        "heading": "Retención de Datos",
+        "body": "Conservamos la información que usted envía durante el tiempo razonablemente necesario para responder a su consulta, procesar su inscripción y mantener nuestros registros comerciales, a menos que usted solicite que la eliminemos antes."
+      },
+      "security": {
+        "heading": "Seguridad",
+        "body": "Tomamos medidas razonables para proteger su información, incluyendo la limitación de la frecuencia de envío de formularios para prevenir abusos y el cifrado seguro de las contraseñas del personal. Sin embargo, ningún método de almacenamiento o transmisión electrónica es completamente seguro, y no podemos garantizar una seguridad absoluta."
+      },
+      "rights": {
+        "heading": "Sus Derechos y Opciones",
+        "body": "Puede contactarnos en cualquier momento para preguntar qué información tenemos sobre usted, solicitar una corrección o solicitar que la eliminemos. Responderemos a las solicitudes razonables con prontitud."
+      },
+      "changes": {
+        "heading": "Cambios a esta Política",
+        "body": "Podemos actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se publicará en esta página con una fecha de vigencia revisada."
+      },
+      "contact": {
+        "heading": "Contáctenos",
+        "body": "Si tiene preguntas sobre esta Política de Privacidad o sobre cómo manejamos su información, por favor contáctenos:"
+      },
+      "disclaimer": "Esta Política de Privacidad es una plantilla con fines de demostración y no constituye asesoría legal. Por favor, haga que un abogado calificado la revise antes de usarla para un negocio real."
+    }
+  },
+  "forms": {
+    "enrollment": {
+      "parentName": "Nombre del Padre / Tutor",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "childAge": "Edad del Niño/a",
+      "preferredStartDate": "Fecha de Inicio Preferida",
+      "notes": "Notas Adicionales",
+      "addAnotherChild": "Agregar otro niño",
+      "removeChild": "Eliminar niño",
+      "submitInquiry": "Enviar Solicitud",
+      "submitting": "Enviando…",
+      "successMessage": "¡Gracias! Hemos recibido su solicitud de inscripción. Nos pondremos en contacto pronto.",
+      "validation": {
+        "parentNameRequired": "El nombre del padre o tutor es obligatorio",
+        "invalidEmail": "Ingrese un correo electrónico válido",
+        "invalidPhone": "Ingrese un número de teléfono válido",
+        "preferredStartDateRequired": "La fecha de inicio preferida es obligatoria",
+        "childAgeRequired": "La edad del niño/a es obligatoria"
+      }
+    },
+    "contact": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "sendMessage": "Enviar Mensaje",
+      "sending": "Enviando…",
+      "successMessage": "¡Gracias por escribirnos! Nos pondremos en contacto pronto.",
+      "validation": {
+        "nameRequired": "El nombre es obligatorio",
+        "invalidEmail": "Ingrese un correo electrónico válido",
+        "invalidPhone": "Ingrese un número de teléfono válido",
+        "messageRequired": "El mensaje es obligatorio"
+      }
+    },
+    "shared": {
+      "genericError": "Algo salió mal. Por favor, inténtelo de nuevo."
+    }
+  }
+}

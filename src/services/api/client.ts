@@ -20,7 +20,11 @@ export async function request<T>(
       },
     });
     if (!response.ok) {
-      return { success: false, error: `Request failed with status ${response.status}` };
+      return {
+        success: false,
+        error: `Request failed with status ${response.status}`,
+        status: response.status,
+      };
     }
     const data = (await response.json()) as T;
     return { success: true, data };

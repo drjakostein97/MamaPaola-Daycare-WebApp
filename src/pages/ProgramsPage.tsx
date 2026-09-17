@@ -10,16 +10,19 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useTranslation } from 'react-i18next';
 import { PageHeader } from '../layout/PageHeader';
 import { SectionContainer } from '../components/common/SectionContainer';
 import { programs, curriculumPillars, dailySchedule } from '../data/programs';
 
 export function ProgramsPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <PageHeader
-        title="Our Programs"
-        subtitle="Age-appropriate classrooms and curriculum from infancy through pre-K."
+        title={t('pages.programs.title')}
+        subtitle={t('pages.programs.subtitle')}
       />
 
       <SectionContainer>
@@ -30,11 +33,11 @@ export function ProgramsPage() {
                 <Box sx={{ bgcolor: `brand.${p.colorKey}`, height: 12 }} />
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
-                    {p.name}
+                    {t(`data.programs.${p.id}.name`)}
                   </Typography>
-                  <Chip label={p.ageRange} size="small" color="primary" sx={{ mb: 1.5 }} />
+                  <Chip label={t(`data.programs.${p.id}.ageRange`)} size="small" color="primary" sx={{ mb: 1.5 }} />
                   <Typography variant="body2" color="text.secondary">
-                    {p.description}
+                    {t(`data.programs.${p.id}.description`)}
                   </Typography>
                 </CardContent>
               </Card>
@@ -45,18 +48,18 @@ export function ProgramsPage() {
 
       <SectionContainer bgColor="brand.lavender">
         <Typography variant="h2" align="center" sx={{ mb: 5 }}>
-          Curriculum Pillars
+          {t('pages.programs.curriculumPillarsTitle')}
         </Typography>
         <Grid container spacing={3}>
           {curriculumPillars.map((c) => (
-            <Grid key={c.title} size={{ xs: 12, sm: 6, md: 3 }}>
+            <Grid key={c.id} size={{ xs: 12, sm: 6, md: 3 }}>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
-                    {c.title}
+                    {t(`data.programs.curriculumPillars.${c.id}.title`)}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {c.description}
+                    {t(`data.programs.curriculumPillars.${c.id}.description`)}
                   </Typography>
                 </CardContent>
               </Card>
@@ -67,15 +70,15 @@ export function ProgramsPage() {
 
       <SectionContainer maxWidth="sm">
         <Typography variant="h2" align="center" sx={{ mb: 4 }}>
-          A Sample Day
+          {t('pages.programs.sampleDayTitle')}
         </Typography>
         <TableContainer component={Paper} variant="outlined">
           <Table>
             <TableBody>
               {dailySchedule.map((row) => (
-                <TableRow key={row.time}>
+                <TableRow key={row.id}>
                   <TableCell sx={{ fontWeight: 700, width: 120 }}>{row.time}</TableCell>
-                  <TableCell>{row.activity}</TableCell>
+                  <TableCell>{t(`data.programs.dailySchedule.${row.id}.activity`)}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

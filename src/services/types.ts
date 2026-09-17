@@ -5,12 +5,15 @@ export interface ContactFormPayload {
   message: string;
 }
 
+export interface EnrollmentChild {
+  age: string;
+}
+
 export interface EnrollmentInquiryPayload {
   parentName: string;
   email: string;
   phone: string;
-  childName: string;
-  childAge: string;
+  children: EnrollmentChild[];
   preferredStartDate: string;
   notes?: string;
 }
@@ -19,6 +22,7 @@ export interface ApiResult<T> {
   success: boolean;
   data?: T;
   error?: string;
+  status?: number;
 }
 
 export interface LoginPayload {
@@ -46,8 +50,7 @@ export interface EnrollmentInquiryRecord {
   parentName: string;
   email: string;
   phone: string;
-  childName: string;
-  childAge: string;
+  children: EnrollmentChild[];
   preferredStartDate: string;
   notes?: string;
   createdAt: string;

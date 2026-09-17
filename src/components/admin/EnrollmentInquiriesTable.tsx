@@ -26,8 +26,7 @@ export function EnrollmentInquiriesTable({ inquiries }: EnrollmentInquiriesTable
             <TableCell sx={{ fontWeight: 800 }}>Parent</TableCell>
             <TableCell sx={{ fontWeight: 800 }}>Email</TableCell>
             <TableCell sx={{ fontWeight: 800 }}>Phone</TableCell>
-            <TableCell sx={{ fontWeight: 800 }}>Child</TableCell>
-            <TableCell sx={{ fontWeight: 800 }}>Age</TableCell>
+            <TableCell sx={{ fontWeight: 800 }}>Children</TableCell>
             <TableCell sx={{ fontWeight: 800 }}>Preferred Start</TableCell>
             <TableCell sx={{ fontWeight: 800 }}>Notes</TableCell>
           </TableRow>
@@ -39,8 +38,7 @@ export function EnrollmentInquiriesTable({ inquiries }: EnrollmentInquiriesTable
               <TableCell>{i.parentName}</TableCell>
               <TableCell>{i.email}</TableCell>
               <TableCell>{i.phone}</TableCell>
-              <TableCell>{i.childName}</TableCell>
-              <TableCell>{i.childAge}</TableCell>
+              <TableCell>{i.children.map((c) => c.age).join(', ')}</TableCell>
               <TableCell>{i.preferredStartDate}</TableCell>
               <TableCell sx={{ maxWidth: 240 }}>{i.notes}</TableCell>
             </TableRow>

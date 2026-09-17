@@ -9,6 +9,7 @@ import { StaffPage } from '../pages/StaffPage';
 import { TuitionPage } from '../pages/TuitionPage';
 import { EnrollmentPage } from '../pages/EnrollmentPage';
 import { ContactPage } from '../pages/ContactPage';
+import { PrivacyPolicyPage } from '../pages/PrivacyPolicyPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { AdminLoginPage } from '../pages/admin/AdminLoginPage';
 import { AdminPage } from '../pages/admin/AdminPage';
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
       { path: '/tuition', element: <TuitionPage /> },
       { path: '/enrollment', element: <EnrollmentPage /> },
       { path: '/contact', element: <ContactPage /> },
+      { path: '/privacy', element: <PrivacyPolicyPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

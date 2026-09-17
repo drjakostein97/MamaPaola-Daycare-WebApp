@@ -25,11 +25,17 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(x => x.ParentName).HasMaxLength(200).IsRequired();
             e.Property(x => x.Email).HasMaxLength(320).IsRequired();
             e.Property(x => x.Phone).HasMaxLength(50).IsRequired();
-            e.Property(x => x.ChildName).HasMaxLength(200).IsRequired();
-            e.Property(x => x.ChildAge).HasMaxLength(50).IsRequired();
             e.Property(x => x.PreferredStartDate).HasMaxLength(50).IsRequired();
             e.Property(x => x.Notes).HasMaxLength(4000);
             e.Property(x => x.CreatedAt).HasDefaultValueSql("now()");
+            e.OwnsMany(x => x.Children, cb =>
+            {
+                cb.ToTable("EnrollmentChildren");
+                cb.WithOwner().HasForeignKey("EnrollmentInquiryId");
+                cb.Property<int>("Id");
+                cb.HasKey("Id");
+                cb.Property(c => c.Age).HasMaxLength(50).IsRequired();
+            });
         });
 
         modelBuilder.Entity<StaffUser>(e =>

@@ -13,38 +13,41 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { useTranslation } from 'react-i18next';
 import { PageHeader } from '../layout/PageHeader';
 import { SectionContainer } from '../components/common/SectionContainer';
 import { tuitionTiers, closures, tuitionFaqs } from '../data/tuition';
 import { siteConfig } from '../data/siteConfig';
 
 export function TuitionPage() {
+  const { t } = useTranslation();
+
   return (
     <>
-      <PageHeader title="Tuition & Schedule" subtitle="Transparent pricing and hours for every family." />
+      <PageHeader title={t('pages.tuition.title')} subtitle={t('pages.tuition.subtitle')} />
 
       <SectionContainer>
         <Typography variant="h3" align="center" gutterBottom>
-          Weekly Tuition
+          {t('pages.tuition.weeklyTuitionTitle')}
         </Typography>
         <Typography variant="body2" align="center" color="text.secondary" sx={{ mb: 4 }}>
-          Placeholder rates — final pricing confirmed at enrollment.
+          {t('pages.tuition.weeklyTuitionCaveat')}
         </Typography>
         <TableContainer component={Paper} variant="outlined">
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell sx={{ fontWeight: 800 }}>Program</TableCell>
-                <TableCell sx={{ fontWeight: 800 }}>Full-Time</TableCell>
-                <TableCell sx={{ fontWeight: 800 }}>Part-Time</TableCell>
+                <TableCell sx={{ fontWeight: 800 }}>{t('pages.tuition.tableProgram')}</TableCell>
+                <TableCell sx={{ fontWeight: 800 }}>{t('pages.tuition.tableFullTime')}</TableCell>
+                <TableCell sx={{ fontWeight: 800 }}>{t('pages.tuition.tablePartTime')}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {tuitionTiers.map((tier) => (
                 <TableRow key={tier.id}>
-                  <TableCell>{tier.program}</TableCell>
-                  <TableCell>{tier.fullTime}</TableCell>
-                  <TableCell>{tier.partTime}</TableCell>
+                  <TableCell>{t(`data.tuition.tiers.${tier.id}.program`)}</TableCell>
+                  <TableCell>{t(`data.tuition.tiers.${tier.id}.fullTime`)}</TableCell>
+                  <TableCell>{t(`data.tuition.tiers.${tier.id}.partTime`)}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -56,13 +59,13 @@ export function TuitionPage() {
         <Grid container spacing={6}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography variant="h3" gutterBottom>
-              Hours of Operation
+              {t('pages.tuition.hoursOfOperationTitle')}
             </Typography>
             <Card>
               <CardContent>
                 {siteConfig.hours.map((h) => (
-                  <Typography key={h.days} variant="body1" sx={{ mb: 1 }}>
-                    <strong>{h.days}:</strong> {h.time}
+                  <Typography key={h.id} variant="body1" sx={{ mb: 1 }}>
+                    <strong>{t(`data.siteConfig.hours.${h.id}.days`)}:</strong> {t(`data.siteConfig.hours.${h.id}.time`)}
                   </Typography>
                 ))}
               </CardContent>
@@ -70,13 +73,13 @@ export function TuitionPage() {
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography variant="h3" gutterBottom>
-              Holiday Closures
+              {t('pages.tuition.holidayClosuresTitle')}
             </Typography>
             <Card>
               <CardContent>
                 {closures.map((c) => (
-                  <Typography key={c.holiday} variant="body1" sx={{ mb: 1 }}>
-                    <strong>{c.date}:</strong> {c.holiday}
+                  <Typography key={c.id} variant="body1" sx={{ mb: 1 }}>
+                    <strong>{t(`data.tuition.closures.${c.id}.date`)}:</strong> {t(`data.tuition.closures.${c.id}.holiday`)}
                   </Typography>
                 ))}
               </CardContent>
@@ -87,15 +90,15 @@ export function TuitionPage() {
 
       <SectionContainer maxWidth="md">
         <Typography variant="h2" align="center" sx={{ mb: 4 }}>
-          Frequently Asked Questions
+          {t('pages.tuition.faqTitle')}
         </Typography>
         {tuitionFaqs.map((faq) => (
-          <Accordion key={faq.question}>
+          <Accordion key={faq.id}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography sx={{ fontWeight: 700 }}>{faq.question}</Typography>
+              <Typography sx={{ fontWeight: 700 }}>{t(`data.tuition.faqs.${faq.id}.question`)}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography color="text.secondary">{faq.answer}</Typography>
+              <Typography color="text.secondary">{t(`data.tuition.faqs.${faq.id}.answer`)}</Typography>
             </AccordionDetails>
           </Accordion>
         ))}

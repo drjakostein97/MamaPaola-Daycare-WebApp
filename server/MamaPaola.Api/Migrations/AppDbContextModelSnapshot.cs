@@ -68,16 +68,6 @@ namespace MamaPaola.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ChildAge")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("ChildName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
                     b.Property<DateTimeOffset>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
@@ -146,6 +136,37 @@ namespace MamaPaola.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("StaffUsers");
+                });
+
+            modelBuilder.Entity("MamaPaola.Api.Entities.EnrollmentInquiry", b =>
+                {
+                    b.OwnsMany("MamaPaola.Api.Entities.EnrollmentChild", "Children", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<string>("Age")
+                                .IsRequired()
+                                .HasMaxLength(50)
+                                .HasColumnType("character varying(50)");
+
+                            b1.Property<int>("EnrollmentInquiryId")
+                                .HasColumnType("integer");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("EnrollmentInquiryId");
+
+                            b1.ToTable("EnrollmentChildren", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("EnrollmentInquiryId");
+                        });
+
+                    b.Navigation("Children");
                 });
 #pragma warning restore 612, 618
         }

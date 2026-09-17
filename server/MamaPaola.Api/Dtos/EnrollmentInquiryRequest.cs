@@ -13,11 +13,8 @@ public class EnrollmentInquiryRequest
     [Required, Phone, StringLength(50)]
     public string Phone { get; set; } = "";
 
-    [Required, StringLength(200)]
-    public string ChildName { get; set; } = "";
-
-    [Required, StringLength(50)]
-    public string ChildAge { get; set; } = "";
+    [Required, MinLength(1, ErrorMessage = "At least one child is required.")]
+    public List<ChildRequest> Children { get; set; } = [];
 
     [Required, StringLength(50)]
     public string PreferredStartDate { get; set; } = "";

@@ -102,3 +102,5 @@ app.MapAdminEndpoints();
 await StaffUserSeeder.SeedAsync(app);
 
 app.Run();
+
+public partial class Program { }

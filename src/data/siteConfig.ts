@@ -1,9 +1,10 @@
 // PLACEHOLDER CONTENT — replace with real business details before launch.
+// Translatable text (tagline, hours labels, nav labels) lives in src/i18n/locales/*.json,
+// keyed by the `id` fields below — see data.siteConfig.* keys.
 export const siteConfig = {
-  name: 'Mama Paola Daycare',
-  tagline: 'A warm, nurturing place for little ones to grow',
+  name: 'My Favorite Aunts',
   phone: '(555) 123-4567',
-  email: 'hello@mamapaoladaycare.example',
+  email: 'hello@myfavoriteaunts.example',
   address: {
     line1: '123 Sunshine Lane',
     city: 'Springfield',
@@ -11,20 +12,20 @@ export const siteConfig = {
     zip: '62704',
   },
   hours: [
-    { days: 'Monday – Friday', time: '6:30 AM – 6:00 PM' },
-    { days: 'Saturday – Sunday', time: 'Closed' },
+    { id: 'weekday' },
+    { id: 'weekend' },
   ],
   social: {
     facebook: 'https://facebook.com/example',
     instagram: 'https://instagram.com/example',
   },
   nav: [
-    { label: 'Home', to: '/' },
-    { label: 'About', to: '/about' },
-    { label: 'Programs', to: '/programs' },
-    { label: 'Gallery', to: '/gallery' },
-    { label: 'Staff', to: '/staff' },
-    { label: 'Tuition', to: '/tuition' },
-    { label: 'Contact', to: '/contact' },
+    { id: 'home', to: '/' },
+    { id: 'about', to: '/about' },
+    { id: 'programs', to: '/programs' },
+    { id: 'gallery', to: '/gallery' },
+    { id: 'staff', to: '/staff' },
+    { id: 'tuition', to: '/tuition' },
+    { id: 'contact', to: '/contact' },
   ],
 };

@@ -3,8 +3,12 @@ import type { FormEvent } from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useTranslation } from 'react-i18next';
 import { useAsyncForm } from '../../hooks/useAsyncForm';
 import { submitEnrollmentInquiry } from '../../services/enrollmentService';
 import { isRequired, isValidEmail, isValidPhone } from '../../utils/validators';
@@ -14,29 +18,58 @@ const emptyForm: EnrollmentInquiryPayload = {
   parentName: '',
   email: '',
   phone: '',
-  childName: '',
-  childAge: '',
+  children: [{ age: '' }],
   preferredStartDate: '',
   notes: '',
 };
 
+type TopLevelField = 'parentName' | 'email' | 'phone' | 'preferredStartDate' | 'notes';
+
+interface FormErrors {
+  parentName?: string;
+  email?: string;
+  phone?: string;
+  preferredStartDate?: string;
+  children?: Array<{ age?: string }>;
+}
+
 export function EnrollmentForm() {
+  const { t } = useTranslation();
   const [form, setForm] = useState<EnrollmentInquiryPayload>(emptyForm);
-  const [errors, setErrors] = useState<Partial<Record<keyof EnrollmentInquiryPayload, string>>>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const { status, error, submit, isLoading } = useAsyncForm(submitEnrollmentInquiry);
 
-  function handleChange(field: keyof EnrollmentInquiryPayload, value: string) {
+  function handleChange(field: TopLevelField, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
   }
 
+  function handleChildChange(index: number, field: 'age', value: string) {
+    setForm((prev) => ({
+      ...prev,
+      children: prev.children.map((c, i) => (i === index ? { ...c, [field]: value } : c)),
+    }));
+  }
+
+  function handleAddChild() {
+    setForm((prev) => ({ ...prev, children: [...prev.children, { age: '' }] }));
+  }
+
+  function handleRemoveChild(index: number) {
+    setForm((prev) => ({ ...prev, children: prev.children.filter((_, i) => i !== index) }));
+  }
+
   function validate(): boolean {
-    const next: Partial<Record<keyof EnrollmentInquiryPayload, string>> = {};
-    if (!isRequired(form.parentName)) next.parentName = 'Parent name is required';
-    if (!isValidEmail(form.email)) next.email = 'Enter a valid email address';
-    if (!isValidPhone(form.phone)) next.phone = 'Enter a valid phone number';
-    if (!isRequired(form.childName)) next.childName = "Child's name is required";
-    if (!isRequired(form.childAge)) next.childAge = "Child's age is required";
-    if (!isRequired(form.preferredStartDate)) next.preferredStartDate = 'Preferred start date is required';
+    const next: FormErrors = {};
+    if (!isRequired(form.parentName)) next.parentName = t('forms.enrollment.validation.parentNameRequired');
+    if (!isValidEmail(form.email)) next.email = t('forms.enrollment.validation.invalidEmail');
+    if (!isValidPhone(form.phone)) next.phone = t('forms.enrollment.validation.invalidPhone');
+    if (!isRequired(form.preferredStartDate)) next.preferredStartDate = t('forms.enrollment.validation.preferredStartDateRequired');
+
+    const childErrors = form.children.map((c) => ({
+      age: isRequired(c.age) ? undefined : t('forms.enrollment.validation.childAgeRequired'),
+    }));
+    if (childErrors.some((e) => e.age)) next.children = childErrors;
+
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -55,7 +88,7 @@ export function EnrollmentForm() {
       <Stack spacing={3}>
         {status === 'success' && (
           <Alert severity="success">
-            Thank you! Your enrollment inquiry has been received. We'll be in touch soon.
+            {t('forms.enrollment.successMessage')}
           </Alert>
         )}
         {status === 'error' && <Alert severity="error">{error}</Alert>}
@@ -63,7 +96,7 @@ export function EnrollmentForm() {
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
-              label="Parent / Guardian Name"
+              label={t('forms.enrollment.parentName')}
               fullWidth
               required
               value={form.parentName}
@@ -74,7 +107,7 @@ export function EnrollmentForm() {
           </Grid>
           <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
-              label="Email"
+              label={t('forms.enrollment.email')}
               type="email"
               fullWidth
               required
@@ -86,7 +119,7 @@ export function EnrollmentForm() {
           </Grid>
           <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
-              label="Phone"
+              label={t('forms.enrollment.phone')}
               fullWidth
               required
               value={form.phone}
@@ -95,31 +128,38 @@ export function EnrollmentForm() {
               helperText={errors.phone}
             />
           </Grid>
-          <Grid size={{ xs: 12, sm: 6 }}>
-            <TextField
-              label="Child's Name"
-              fullWidth
-              required
-              value={form.childName}
-              onChange={(e) => handleChange('childName', e.target.value)}
-              error={!!errors.childName}
-              helperText={errors.childName}
-            />
+          {form.children.map((child, index) => (
+            <Grid key={index} size={12} container spacing={2}>
+              <Grid size={{ xs: 12, sm: 4 }}>
+                <TextField
+                  label={t('forms.enrollment.childAge')}
+                  fullWidth
+                  required
+                  value={child.age}
+                  onChange={(e) => handleChildChange(index, 'age', e.target.value)}
+                  error={!!errors.children?.[index]?.age}
+                  helperText={errors.children?.[index]?.age}
+                />
+              </Grid>
+              <Grid size={{ xs: 12, sm: 2 }} sx={{ display: 'flex', alignItems: 'center' }}>
+                <IconButton
+                  aria-label={t('forms.enrollment.removeChild')}
+                  onClick={() => handleRemoveChild(index)}
+                  disabled={form.children.length <= 1}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </Grid>
+            </Grid>
+          ))}
+          <Grid size={12}>
+            <Button variant="outlined" size="small" startIcon={<AddIcon />} onClick={handleAddChild}>
+              {t('forms.enrollment.addAnotherChild')}
+            </Button>
           </Grid>
           <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
-              label="Child's Age"
-              fullWidth
-              required
-              value={form.childAge}
-              onChange={(e) => handleChange('childAge', e.target.value)}
-              error={!!errors.childAge}
-              helperText={errors.childAge}
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6 }}>
-            <TextField
-              label="Preferred Start Date"
+              label={t('forms.enrollment.preferredStartDate')}
               type="date"
               fullWidth
               required
@@ -132,7 +172,7 @@ export function EnrollmentForm() {
           </Grid>
           <Grid size={12}>
             <TextField
-              label="Additional Notes"
+              label={t('forms.enrollment.notes')}
               fullWidth
               multiline
               minRows={3}
@@ -143,7 +183,7 @@ export function EnrollmentForm() {
         </Grid>
 
         <Button type="submit" variant="contained" color="primary" size="large" disabled={isLoading}>
-          {isLoading ? 'Submitting…' : 'Submit Inquiry'}
+          {isLoading ? t('forms.enrollment.submitting') : t('forms.enrollment.submitInquiry')}
         </Button>
       </Stack>
     </form>

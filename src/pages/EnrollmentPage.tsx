@@ -2,22 +2,25 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import { useTranslation } from 'react-i18next';
 import { PageHeader } from '../layout/PageHeader';
 import { SectionContainer } from '../components/common/SectionContainer';
 import { EnrollmentForm } from '../components/enrollment/EnrollmentForm';
 import { siteConfig } from '../data/siteConfig';
 
 const steps = [
-  { step: '1', title: 'Inquire', description: 'Submit the form below or call us to start the conversation.' },
-  { step: '2', title: 'Tour', description: 'Visit our center and meet the teachers who will care for your child.' },
-  { step: '3', title: 'Apply', description: 'Complete enrollment paperwork and pay the registration fee.' },
-  { step: '4', title: 'Enroll', description: 'Welcome to the family! We’ll schedule your child’s first day.' },
+  { step: '1', id: 'inquire' },
+  { step: '2', id: 'tour' },
+  { step: '3', id: 'apply' },
+  { step: '4', id: 'enroll' },
 ];
 
 export function EnrollmentPage() {
+  const { t } = useTranslation();
+
   return (
     <>
-      <PageHeader title="Enrollment" subtitle="Four simple steps to join the Mama Paola family." />
+      <PageHeader title={t('pages.enrollment.title')} subtitle={t('pages.enrollment.subtitle')} />
 
       <SectionContainer>
         <Grid container spacing={3} sx={{ mb: 2 }}>
@@ -43,10 +46,10 @@ export function EnrollmentPage() {
                   {s.step}
                 </Box>
                 <Typography variant="h6" gutterBottom>
-                  {s.title}
+                  {t(`pages.enrollment.steps.${s.id}.title`)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {s.description}
+                  {t(`pages.enrollment.steps.${s.id}.description`)}
                 </Typography>
               </Box>
             </Grid>
@@ -57,11 +60,10 @@ export function EnrollmentPage() {
       <SectionContainer bgColor="brand.lavender" maxWidth="md">
         <Paper sx={{ p: { xs: 3, md: 5 } }}>
           <Typography variant="h3" gutterBottom>
-            Enrollment Inquiry
+            {t('pages.enrollment.inquiryTitle')}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-            Prefer to talk it through? Call us at {siteConfig.phone} or email{' '}
-            {siteConfig.email}.
+            {t('pages.enrollment.callOrEmail', { phone: siteConfig.phone, email: siteConfig.email })}
           </Typography>
           <EnrollmentForm />
         </Paper>

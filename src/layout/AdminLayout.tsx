@@ -24,7 +24,7 @@ export function AdminLayout() {
             variant="h6"
             sx={{ flexGrow: 1, fontFamily: "'Aloha Chunky', cursive", color: '#fff' }}
           >
-            Mama Paola Admin
+            My Favorite Aunts Admin
           </Typography>
           {isAuthenticated && (
             <>

@@ -8,6 +8,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import { useTranslation } from 'react-i18next';
 import { PageHeader } from '../layout/PageHeader';
 import { SectionContainer } from '../components/common/SectionContainer';
 import { PlaceholderBlock } from '../components/common/PlaceholderBlock';
@@ -26,9 +27,11 @@ function InfoRow({ icon, children }: { icon: ReactNode; children: ReactNode }) {
 }
 
 export function ContactPage() {
+  const { t } = useTranslation();
+
   return (
     <>
-      <PageHeader title="Contact Us" subtitle="We'd love to hear from you — reach out anytime." />
+      <PageHeader title={t('pages.contact.title')} subtitle={t('pages.contact.subtitle')} />
 
       <SectionContainer>
         <Grid container spacing={6}>
@@ -41,15 +44,17 @@ export function ContactPage() {
               <InfoRow icon={<PhoneIcon />}>{siteConfig.phone}</InfoRow>
               <InfoRow icon={<EmailIcon />}>{siteConfig.email}</InfoRow>
               <InfoRow icon={<ScheduleIcon />}>
-                {siteConfig.hours.map((h) => `${h.days}: ${h.time}`).join(' · ')}
+                {siteConfig.hours
+                  .map((h) => `${t(`data.siteConfig.hours.${h.id}.days`)}: ${t(`data.siteConfig.hours.${h.id}.time`)}`)
+                  .join(' · ')}
               </InfoRow>
-              <PlaceholderBlock label="Map placeholder" height={240} bgColor="brand.lightBlue" />
+              <PlaceholderBlock label={t('pages.contact.mapPlaceholder')} height={240} bgColor="brand.lightBlue" />
             </Stack>
           </Grid>
           <Grid size={{ xs: 12, md: 7 }}>
             <Paper sx={{ p: { xs: 3, md: 4 } }} variant="outlined">
               <Typography variant="h4" gutterBottom>
-                Send Us a Message
+                {t('pages.contact.sendMessage')}
               </Typography>
               <ContactForm />
             </Paper>
