@@ -1,6 +1,6 @@
-# My Favorite Aunts Daycare
+# Your Favorite Aunts Daycare
 
-A full-stack website being built for a real daycare business: a public marketing site with an enrollment/contact pipeline, and an admin portal for staff to review submissions. It's currently in development ahead of launch, and also doubles as a portfolio piece demonstrating a complete, production-shaped full-stack workflow — frontend, backend, database, auth, i18n, and automated testing.
+A full-stack website being built for a real daycare business: a public marketing site with an enrollment/contact pipeline, and an admin portal for staff to review submissions. It's currently in development ahead of launch — frontend, backend, database, auth, i18n, and automated testing.
 
 **Current content is placeholder** (business name, staff bios, pricing, etc.) and will be replaced with the real business's details before launch — the code and architecture are already production-shaped.
 

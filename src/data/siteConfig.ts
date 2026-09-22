@@ -2,7 +2,7 @@
 // Translatable text (tagline, hours labels, nav labels) lives in src/i18n/locales/*.json,
 // keyed by the `id` fields below — see data.siteConfig.* keys.
 export const siteConfig = {
-  name: 'My Favorite Aunts',
+  name: 'Your Favorite Aunts',
   phone: '(555) 123-4567',
   email: 'hello@myfavoriteaunts.example',
   address: {
