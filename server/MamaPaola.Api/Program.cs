@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,7 @@ builder.Services.AddValidation();
 builder.Services.AddProblemDetails();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("AppDb")));
+    options.UseNpgsql(ResolveConnectionString(builder.Configuration)));
 
 builder.Services.AddHealthChecks()
     .AddDbContextCheck<AppDbContext>();
@@ -99,8 +100,45 @@ app.MapEnrollmentEndpoints();
 app.MapAuthEndpoints();
 app.MapAdminEndpoints();
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    // Integration tests swap in a Sqlite provider with an intentionally different
+    // model (see SqliteDateTimeOffsetModelCustomizer), which Migrate() would reject
+    // as a schema mismatch — only auto-migrate the real Npgsql-backed database.
+    if (db.Database.IsNpgsql())
+    {
+        db.Database.Migrate();
+    }
+}
+
 await StaffUserSeeder.SeedAsync(app);
 
 app.Run();
+
+// Render/Neon-style hosts provide a `postgres://user:pass@host/db` URI via DATABASE_URL,
+// but Npgsql expects an ADO-style connection string — convert when present, otherwise
+// fall back to the configured ConnectionStrings:AppDb (used for local dev).
+static string? ResolveConnectionString(IConfiguration configuration)
+{
+    var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+    if (string.IsNullOrEmpty(databaseUrl))
+    {
+        return configuration.GetConnectionString("AppDb");
+    }
+
+    var uri = new Uri(databaseUrl);
+    var userInfo = uri.UserInfo.Split(':', 2);
+    var connectionStringBuilder = new NpgsqlConnectionStringBuilder
+    {
+        Host = uri.Host,
+        Port = uri.Port > 0 ? uri.Port : 5432,
+        Database = uri.AbsolutePath.TrimStart('/'),
+        Username = Uri.UnescapeDataString(userInfo[0]),
+        Password = userInfo.Length > 1 ? Uri.UnescapeDataString(userInfo[1]) : string.Empty,
+        SslMode = SslMode.Require,
+    };
+    return connectionStringBuilder.ToString();
+}
 
 public partial class Program { }

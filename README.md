@@ -4,6 +4,16 @@ A public portfolio snapshot of a full-stack daycare website: a marketing site wi
 
 **All business content here is placeholder** (business name, staff bios, pricing, etc.). This repo is a standalone demo; a private sibling repo, with the same history up to this point, powers the actual in-development client site.
 
+## Live Demo
+
+- Frontend: https://drjakostein97.github.io/MamaPaola-Daycare-WebApp/
+- Backend: hosted on Render's free tier, which spins down after 15 minutes of inactivity — the first request after idle can take 30-50 seconds while it cold-starts.
+
+## Deployment
+
+- **Frontend**: GitHub Actions (`.github/workflows/deploy-pages.yml`) builds the Vite app and publishes it to GitHub Pages on every push to `master`.
+- **Backend**: containerized with the `Dockerfile` in `server/MamaPaola.Api/` and deployed to Render as a Blueprint (`render.yaml`); Postgres is hosted separately on Neon.
+
 ## Tech Stack
 
 **Frontend** — `src/`
@@ -59,10 +69,9 @@ dotnet user-secrets set "Jwt:Issuer" "MamaPaolaDaycareApi"
 dotnet user-secrets set "Jwt:Audience" "MamaPaolaDaycareAdmin"
 dotnet user-secrets set "Bootstrap:StaffUsername" "admin"
 dotnet user-secrets set "Bootstrap:StaffPassword" "<a password, 8+ characters>"
-dotnet ef database update
 dotnet run
 ```
-The API listens on `http://localhost:5078`. On first run it seeds one staff account from the `Bootstrap:*` secrets above.
+The API listens on `http://localhost:5078`. Schema migrations apply automatically on startup (`Database.Migrate()` in `Program.cs`), and on first run it seeds one staff account from the `Bootstrap:*` secrets above.
 
 ### Frontend
 ```

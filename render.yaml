@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mamapaola-api
+    runtime: docker
+    dockerfilePath: ./server/MamaPaola.Api/Dockerfile
+    dockerContext: ./server/MamaPaola.Api
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: DATABASE_URL
+        sync: false
+      - key: Jwt__SigningKey
+        sync: false
+      - key: Bootstrap__StaffUsername
+        sync: false
+      - key: Bootstrap__StaffPassword
+        sync: false
+      - key: Bootstrap__StaffDisplayName
+        sync: false
