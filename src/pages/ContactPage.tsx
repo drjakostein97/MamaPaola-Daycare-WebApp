@@ -54,7 +54,7 @@ export function ContactPage() {
                 src={`https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                sx={{ border: 0, borderRadius: 5, width: '100%', height: 240 }}
+                sx={{ border: 0, borderRadius: 5, width: '100%', height: 240, overflow: 'hidden' }}
               />
             </Stack>
           </Grid>
