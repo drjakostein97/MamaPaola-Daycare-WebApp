@@ -1,10 +1,10 @@
-// PLACEHOLDER CONTENT — replace with real business details before launch.
+// PLACEHOLDER CONTENT — this is a public portfolio snapshot, not a real business.
 // Translatable text (tagline, hours labels, nav labels) lives in src/i18n/locales/*.json,
 // keyed by the `id` fields below — see data.siteConfig.* keys.
 export const siteConfig = {
-  name: 'Your Favorite Aunts',
+  name: 'Mama Paola Daycare',
   phone: '(555) 123-4567',
-  email: 'hello@myfavoriteaunts.example',
+  email: 'hello@mamapaoladaycare.example',
   address: {
     line1: '123 Sunshine Lane',
     city: 'Springfield',
