@@ -138,7 +138,7 @@
     "contact": {
       "title": "Contact Us",
       "subtitle": "We'd love to hear from you — reach out anytime.",
-      "mapPlaceholder": "Map placeholder",
+      "mapTitle": "Location map",
       "sendMessage": "Send Us a Message"
     },
     "programs": {

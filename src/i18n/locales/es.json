@@ -138,7 +138,7 @@
     "contact": {
       "title": "Contáctenos",
       "subtitle": "Nos encantaría saber de usted — comuníquese en cualquier momento.",
-      "mapPlaceholder": "Marcador de mapa",
+      "mapTitle": "Mapa de ubicación",
       "sendMessage": "Envíenos un Mensaje"
     },
     "programs": {

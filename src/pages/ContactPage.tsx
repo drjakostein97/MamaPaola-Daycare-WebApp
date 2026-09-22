@@ -11,7 +11,6 @@ import ScheduleIcon from '@mui/icons-material/Schedule';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '../layout/PageHeader';
 import { SectionContainer } from '../components/common/SectionContainer';
-import { PlaceholderBlock } from '../components/common/PlaceholderBlock';
 import { ContactForm } from '../components/contact/ContactForm';
 import { siteConfig } from '../data/siteConfig';
 
@@ -28,6 +27,7 @@ function InfoRow({ icon, children }: { icon: ReactNode; children: ReactNode }) {
 
 export function ContactPage() {
   const { t } = useTranslation();
+  const fullAddress = `${siteConfig.address.line1}, ${siteConfig.address.city}, ${siteConfig.address.state} ${siteConfig.address.zip}`;
 
   return (
     <>
@@ -48,7 +48,14 @@ export function ContactPage() {
                   .map((h) => `${t(`data.siteConfig.hours.${h.id}.days`)}: ${t(`data.siteConfig.hours.${h.id}.time`)}`)
                   .join(' · ')}
               </InfoRow>
-              <PlaceholderBlock label={t('pages.contact.mapPlaceholder')} height={240} bgColor="brand.lightBlue" />
+              <Box
+                component="iframe"
+                title={t('pages.contact.mapTitle')}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                sx={{ border: 0, borderRadius: 5, width: '100%', height: 240 }}
+              />
             </Stack>
           </Grid>
           <Grid size={{ xs: 12, md: 7 }}>
