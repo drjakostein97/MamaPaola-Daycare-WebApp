@@ -121,7 +121,7 @@ app.Run();
 // fall back to the configured ConnectionStrings:AppDb (used for local dev).
 static string? ResolveConnectionString(IConfiguration configuration)
 {
-    var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+    var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL")?.Trim().Trim('"', '\'');
     if (string.IsNullOrEmpty(databaseUrl))
     {
         return configuration.GetConnectionString("AppDb");
