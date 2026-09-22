@@ -15,30 +15,33 @@ import { AdminLoginPage } from '../pages/admin/AdminLoginPage';
 import { AdminPage } from '../pages/admin/AdminPage';
 import { ProtectedRoute } from '../auth/ProtectedRoute';
 
-export const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      { path: '/', element: <HomePage /> },
-      { path: '/about', element: <AboutPage /> },
-      { path: '/programs', element: <ProgramsPage /> },
-      { path: '/gallery', element: <GalleryPage /> },
-      { path: '/staff', element: <StaffPage /> },
-      { path: '/tuition', element: <TuitionPage /> },
-      { path: '/enrollment', element: <EnrollmentPage /> },
-      { path: '/contact', element: <ContactPage /> },
-      { path: '/privacy', element: <PrivacyPolicyPage /> },
-      { path: '*', element: <NotFoundPage /> },
-    ],
-  },
-  {
-    element: <AdminLayout />,
-    children: [
-      { path: '/admin/login', element: <AdminLoginPage /> },
-      {
-        element: <ProtectedRoute />,
-        children: [{ path: '/admin', element: <AdminPage /> }],
-      },
-    ],
-  },
-]);
+export const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { path: '/', element: <HomePage /> },
+        { path: '/about', element: <AboutPage /> },
+        { path: '/programs', element: <ProgramsPage /> },
+        { path: '/gallery', element: <GalleryPage /> },
+        { path: '/staff', element: <StaffPage /> },
+        { path: '/tuition', element: <TuitionPage /> },
+        { path: '/enrollment', element: <EnrollmentPage /> },
+        { path: '/contact', element: <ContactPage /> },
+        { path: '/privacy', element: <PrivacyPolicyPage /> },
+        { path: '*', element: <NotFoundPage /> },
+      ],
+    },
+    {
+      element: <AdminLayout />,
+      children: [
+        { path: '/admin/login', element: <AdminLoginPage /> },
+        {
+          element: <ProtectedRoute />,
+          children: [{ path: '/admin', element: <AdminPage /> }],
+        },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL },
+);
