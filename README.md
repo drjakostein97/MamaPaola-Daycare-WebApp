@@ -7,12 +7,15 @@ A public portfolio snapshot of a full-stack daycare website: a marketing site wi
 ## Live Demo
 
 - Frontend: https://drjakostein97.github.io/MamaPaola-Daycare-WebApp/
-- Backend: hosted on Render's free tier, which spins down after 15 minutes of inactivity — the first request after idle can take 30-50 seconds while it cold-starts.
+- Backend: https://mamapaola-api.onrender.com (health check at `/health`) — hosted on Render's free tier, which spins down after 15 minutes of inactivity, so the first request after idle can take 30-50 seconds while it cold-starts.
 
 ## Deployment
 
-- **Frontend**: GitHub Actions (`.github/workflows/deploy-pages.yml`) builds the Vite app and publishes it to GitHub Pages on every push to `master`.
-- **Backend**: containerized with the `Dockerfile` in `server/MamaPaola.Api/` and deployed to Render as a Blueprint (`render.yaml`); Postgres is hosted separately on Neon.
+**Frontend** — GitHub Actions (`.github/workflows/deploy-pages.yml`) builds the Vite app and publishes it to GitHub Pages on every push to `master`. The build step injects the live API URL via the `VITE_API_BASE_URL` repository variable, so the deployed bundle talks to the Render backend without hardcoding it in source. `vite.config.ts` sets `base: '/MamaPaola-Daycare-WebApp/'` to match the GitHub Pages subpath, and the router's `basename` (`src/routes/router.tsx`) mirrors it via `import.meta.env.BASE_URL` so direct/refreshed loads of any route resolve correctly rather than 404ing.
+
+**Backend** — containerized with the `Dockerfile` in `server/MamaPaola.Api/` and deployed to [Render](https://render.com) as a Blueprint (`render.yaml` at the repo root), which provisions the web service and prompts for secret env vars (`DATABASE_URL`, `Jwt__SigningKey`, `Bootstrap__StaffUsername`/`StaffPassword`) without committing them. `Program.cs` applies EF Core migrations automatically on startup against the real Postgres provider, and accepts a `postgres://` URI-style `DATABASE_URL` (converting it to an ADO-style Npgsql connection string), since that's the format hosted Postgres providers hand out.
+
+**Database** — Postgres hosted on [Neon](https://neon.tech) (serverless, free tier that doesn't expire, unlike Render's own free Postgres). The project is linked locally via the Neon CLI (`neon.ts`, `.neon/`) for branch/config management; the Render backend connects using Neon's *unpooled* connection string, since its pooled/PgBouncer connection doesn't reliably support the DDL that migrations run on every boot.
 
 ## Tech Stack
 
@@ -49,8 +52,11 @@ A public portfolio snapshot of a full-stack daycare website: a marketing site wi
 │  ├─ services/              # API client + typed service calls
 │  └─ i18n/                  # Translation resources (en.json / es.json)
 ├─ server/
-│  ├─ MamaPaola.Api/          # ASP.NET Core minimal API
+│  ├─ MamaPaola.Api/          # ASP.NET Core minimal API (+ Dockerfile)
 │  └─ MamaPaola.Api.Tests/    # xUnit test project
+├─ .github/workflows/       # deploy-pages.yml: builds + publishes the frontend
+├─ render.yaml              # Render Blueprint for the backend web service
+└─ neon.ts                  # Neon CLI project/branch config
 ```
 
 ## Getting Started
