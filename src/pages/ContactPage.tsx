@@ -48,14 +48,16 @@ export function ContactPage() {
                   .map((h) => `${t(`data.siteConfig.hours.${h.id}.days`)}: ${t(`data.siteConfig.hours.${h.id}.time`)}`)
                   .join(' · ')}
               </InfoRow>
-              <Box
-                component="iframe"
-                title={t('pages.contact.mapTitle')}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                sx={{ border: 0, borderRadius: 5, width: '100%', height: 240, overflow: 'hidden' }}
-              />
+              <Box sx={{ borderRadius: 5, overflow: 'hidden', height: 240 }}>
+                <Box
+                  component="iframe"
+                  title={t('pages.contact.mapTitle')}
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  sx={{ border: 0, display: 'block', width: '100%', height: '100%' }}
+                />
+              </Box>
             </Stack>
           </Grid>
           <Grid size={{ xs: 12, md: 7 }}>
