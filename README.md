@@ -93,6 +93,4 @@ npm test                                           # frontend (Vitest)
 dotnet test server/MamaPaola.Api.Tests             # backend (xUnit)
 ```
 
-## How This Was Built
 
-This project was built collaboratively with Claude Code (Anthropic's AI coding agent). I directed the work throughout — scoping features, making architecture calls (e.g. choosing `react-i18next` over a hand-rolled translation layer, deciding what data the enrollment form should and shouldn't collect), reviewing implementation plans before code was written, and requesting changes when something didn't fit. The code, tests, and this README were AI-assisted, not AI-authored in the sense of being unreviewed output — every feature here I can walk through and explain.
